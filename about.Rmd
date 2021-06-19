@@ -7,4 +7,4 @@ This is some information about DACSS and the course. Can be prefilled in with so
 
 
 ## Course Instructor:
-[Instructor Name](instructor.html)
+[`r Sys.getenv('INSTRUCTOR_NAME')`](instructor.html)
