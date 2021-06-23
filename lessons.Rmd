@@ -1,0 +1,17 @@
+---
+title: "Lessons"
+site: distill::distill_website
+---
+
+- [R Programming Basics](RProgrammingBasics.html)
+- [Data Wrangling](https://dacss.shinyapps.io/2_datawrangling/)
+- [Introduction to Visualization](https://dacss.shinyapps.io/3_introvisualization/)
+- [Advanced Vissualization](https://dacss.shinyapps.io/4_advancedvisualization/)
+- [Transoforming Data](https://dacss.shinyapps.io/5_transformingdata/)
+- [Data Structures](https://dacss.shinyapps.io/6_datastructures/)
+- [Advanced Programming](https://dacss.shinyapps.io/7_advancedprogramming/)
+- [Basics of Modeling](https://dacss.shinyapps.io/8_modelingbasics/)
+
+
+
+

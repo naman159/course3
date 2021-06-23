@@ -1,5 +1,5 @@
 name: DACSS Course Blog
-title: Data Analytics and Computational Social Science
+title: Course 3
 favicon: images/DACSS_Round_Network.png
 theme: theme.css
 description: |
@@ -27,6 +27,8 @@ navbar:
     href: syllabus.html
   - text: Students
     href: students.html
+  - text: Lessons
+    href: lessons.html
   - icon: fab fa-github-alt fa-1x
     href: https://github.com/naman159/course3
   search: no
