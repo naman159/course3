@@ -19,7 +19,7 @@ twitter:
 navbar:
   logo:
     image: images/UMass White Workmark Horiz.png
-    href: https://dacss.github.io/dacss_course_website/
+    href: https://www.umass.edu
   right:
   - text: About
     href: about.html

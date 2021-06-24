@@ -12,7 +12,7 @@
       "title": "Student Submissions",
       "author": [],
       "contents": "\n\n\n\n\nCourse 3\n\n\nFall 2022\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2021-06-23T15:52:18+05:30"
+      "last_modified": "2021-06-24T08:29:35+05:30"
     },
     {
       "path": "instructor.html",
@@ -41,20 +41,6 @@
       "author": [],
       "contents": "\nEdit this page with the course syllabus and/or other information. Feel free to delete the example file below as well.\n(Note that when knitted, it might display as ‘Couldn’t load plugin’. Simply click ‘Open in Browser’ at the top left side of the screen to view your page looks like.)\nSyllabus:\n\n\n\n\n\n",
       "last_modified": "2021-06-23T15:52:20+05:30"
-    },
-    {
-      "path": "try.html",
-      "title": "Try1",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-06-23T15:52:21+05:30"
-    },
-    {
-      "path": "try2.html",
-      "title": "try2",
-      "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n\nCourse 3\n\n\nAbout\nSyllabus\nStudents\nLessons\n\n\n\n☰\n\n\n  \n    \n      \n        \n        \n        \n      \n      \n    \n    \n      \n  About\n\n\n  Syllabus\n\n\n  Students\n\n\n  Lessons\n\n\n  \n    \n     \n  \n\n      \n  \n\n\n\n\n\n\ntry2\n\n\n\n\n\nR Markdown\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\nsummary(cars)\n##      speed           dist       \n##  Min.   : 4.0   Min.   :  2.00  \n##  1st Qu.:12.0   1st Qu.: 26.00  \n##  Median :15.0   Median : 36.00  \n##  Mean   :15.4   Mean   : 42.98  \n##  3rd Qu.:19.0   3rd Qu.: 56.00  \n##  Max.   :25.0   Max.   :120.00\n\n\nIncluding Plots\nYou can also embed plots, for example:\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n\n\n\n\n\n\n\n\n  \n\n\n\n  \n    \n    \n    \n    \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n// add bootstrap table styles to pandoc tables\nfunction bootstrapStylePandocTables() {\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\n}\n$(document).ready(function () {\n  bootstrapStylePandocTables();\n});\n\n\n\n$(document).ready(function () {\n  window.buildTabsets(\"TOC\");\n});\n\n$(document).ready(function () {\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\n    $(this).parent().toggleClass('nav-tabs-open');\n  });\n});\n\n  (function () {\n    var script = document.createElement(\"script\");\n    script.type = \"text/javascript\";\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\n  })();\n",
-      "last_modified": "2021-06-23T15:52:23+05:30"
     }
   ],
   "collections": ["posts/posts.json"]
