@@ -1,0 +1,40 @@
+---
+title: "Satwik Goyal"
+image: "Satwik.jpeg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/satwik-goyal-b3428418b/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/"
+  - label: Email
+    url: "mailto:srgoyal@umass.edu"
+output:
+  postcards::trestles
+---
+ 
+## Bio
+
+Satwik Goyal studies neural networks and their applications at Google 
+Brain. His research focuses on differentiable network pruning approximation and 
+decentralized gradient inversion mechanics. He frequently collaborates with 
+researchers who study machine learning, computer vision, and cognitive science.
+His work has been featured in WIRED, The Atlantic, Newsweek, and The New York 
+Times Magazine.
+
+## Education
+
+**The University of Massachusetts Amherst** | Amherst, MA
+
+M.S. in Computer Science | September 2021 - May 2022
+
+**The University of Massachusetts Amherst** | Amherst, MA
+
+B.S. in Computer Science | September 2018 - May 2021
+
+## Experience
+
+**Google Brain** | Principal Investigator | January 2018 - Present
+
+**Netflix and Chill** | Research Scientist | June 2014 - December 2017
