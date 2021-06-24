@@ -5,42 +5,42 @@
       "title": "About the Course",
       "author": [],
       "contents": "\nThis is some information about DACSS and the course. Can be prefilled in with something interesting.\nCourse Instructor:\nJohn\n\n\n\n",
-      "last_modified": "2021-06-24T14:00:34+05:30"
+      "last_modified": "2021-06-24T14:50:47+05:30"
     },
     {
       "path": "index.html",
       "title": "Student Submissions",
       "author": [],
       "contents": "\n\n\n\n\nCourse 3\n\n\nFall 2022\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2021-06-24T14:22:31+05:30"
+      "last_modified": "2021-06-24T14:50:52+05:30"
     },
     {
       "path": "instructor.html",
       "title": "John",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          Course 3\n          \n          \n          About\n          Syllabus\n          Students\n          Lessons\n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            John\n          \n          \n            \n              I am some sort of person, blah blah biography.\n            \n            \n              I am some sort of person, blah blah biography.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    \n          \n          \n            \n          \n          \n          \n            \n              \n              \n              \n              \n              \n            \n          \n          \n          \n\n    \n  ",
-      "last_modified": "2021-06-24T14:00:35+05:30"
+      "last_modified": "2021-06-24T14:50:52+05:30"
     },
     {
       "path": "lessons.html",
       "title": "Lessons",
       "author": [],
       "contents": "\nR Programming Basics\nData Wrangling\nIntroduction to Visualization\nAdvanced Vissualization\nTransoforming Data\nData Structures\nAdvanced Programming\nBasics of Modeling\n\n\n\n",
-      "last_modified": "2021-06-24T14:00:35+05:30"
+      "last_modified": "2021-06-24T14:50:55+05:30"
     },
     {
       "path": "students.html",
       "title": "Students",
       "author": [],
       "contents": "\n\n\n\nMax\nSatwik Goyal\n\n\n\n\n",
-      "last_modified": "2021-06-24T14:00:41+05:30"
+      "last_modified": "2021-06-24T14:51:08+05:30"
     },
     {
       "path": "syllabus.html",
       "title": "Course Syllabus",
       "author": [],
       "contents": "\nEdit this page with the course syllabus and/or other information. Feel free to delete the example file below as well.\n(Note that when knitted, it might display as ‘Couldn’t load plugin’. Simply click ‘Open in Browser’ at the top left side of the screen to view your page looks like.)\nSyllabus:\n\n\n\n\n\n",
-      "last_modified": "2021-06-24T14:00:37+05:30"
+      "last_modified": "2021-06-24T14:50:58+05:30"
     }
   ],
   "collections": ["posts/posts.json"]

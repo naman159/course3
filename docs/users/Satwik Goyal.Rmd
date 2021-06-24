@@ -1,6 +1,6 @@
 ---
 title: "Satwik Goyal"
-image: "Satwik.jpeg"
+image: "images/students/Satwik.jpeg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/satwik-goyal-b3428418b/"
