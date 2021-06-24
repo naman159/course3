@@ -1,13 +1,13 @@
 ---
-title: "iris"
+title: iris
 description: |
   I have changed the text here. Go Dub Nation!
 author: Satwik Goyal
-date: 2021-06-24
+date: '2021-06-24'
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

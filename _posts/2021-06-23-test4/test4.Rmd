@@ -1,13 +1,13 @@
 ---
-title: "Test4"
+title: Test4
 description: |
   A short description of the post.
 author: Naman 2
-date: 2021-06-23
+date: '2021-06-23'
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

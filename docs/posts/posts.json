@@ -1,5 +1,85 @@
 [
   {
+    "path": "posts/2021-06-24-iris/",
+    "title": "iris",
+    "description": "I have changed the text here. Go Dub Nation!",
+    "author": [
+      {
+        "name": "Satwik Goyal",
+        "url": {}
+      }
+    ],
+    "date": "2021-06-24",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-06-24T13:59:10+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-06-23-test-2/",
+    "title": "test 2",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Meredith Rolfe",
+        "url": "http://umass.edu/sbs/dacss"
+      }
+    ],
+    "date": "2021-06-23",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-06-24T13:59:02+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-06-23-test/",
+    "title": "test",
+    "description": "A short description of the post.",
+    "author": [],
+    "date": "2021-06-23",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-06-24T13:59:03+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-06-23-test3/",
+    "title": "Test3",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Naman",
+        "url": {}
+      }
+    ],
+    "date": "2021-06-23",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-06-24T13:59:07+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-06-23-test4/",
+    "title": "Test4",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Naman 2",
+        "url": {}
+      }
+    ],
+    "date": "2021-06-23",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-06-24T13:59:09+05:30",
+    "input_file": {}
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to DACSS 601",
     "description": "Welcome to DACSS 601: Foundations of Data Science. We hope you enjoy \nreading what we have to say!",
@@ -15,7 +95,7 @@
     ],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-23T15:52:07+05:30",
+    "last_modified": "2021-06-24T13:59:11+05:30",
     "input_file": {}
   }
 ]
