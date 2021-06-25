@@ -1,0 +1,30 @@
+---
+title: "Golden State Warriors"
+description: |
+  Greatest team in the history of basketball.
+author: Satwik Goyal
+date: 2021-06-25
+categories:
+  - Basketball
+  - Testing Posts
+  - Satwik Goyal
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Here is an image of Stephen Curry
+
+```{r, echo=FALSE}
+# Define variable containing url
+url <- "https://olympics.nbcsports.com/wp-content/uploads/sites/10/2021/06/GettyImages-1232315431-e1624368065792.jpg?w=564"
+```
+<center><img src="`r url`"></center>
+
+
