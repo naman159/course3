@@ -1,0 +1,15 @@
+---
+title: "The Republic of India"
+description: |
+  A short description of the Prime Minister of India.
+author: Narendra Modi
+date: 2021-06-25
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+Some text on India.
+
+
