@@ -12,7 +12,54 @@
       <link>https://github.com/DACSS/dacss_course_website</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>iris</title>
+      <dc:creator>Satwik Goyal</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-06-24-iris</link>
+      <description>I have changed the text here. Go Dub Nation!</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-06-24-iris</guid>
+      <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>test 5</title>
+      <dc:creator>Naman R</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-06-24-test-5</link>
+      <description>A short description of the post.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-06-24-test-5</guid>
+      <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>test 2</title>
+      <dc:creator>Meredith Rolfe</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-06-23-test-2</link>
+      <description>A short description of the post.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-06-23-test-2</guid>
+      <pubDate>Wed, 23 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>test</title>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-06-23-test</link>
+      <description>A short description of the post.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-06-23-test</guid>
+      <pubDate>Wed, 23 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Test3</title>
+      <dc:creator>Naman</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-06-23-test3</link>
+      <description>A short description of the post.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-06-23-test3</guid>
+      <pubDate>Wed, 23 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Test4</title>
+      <dc:creator>Naman 2</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-06-23-test4</link>
+      <description>A short description of the post.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-06-23-test4</guid>
+      <pubDate>Wed, 23 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Welcome to DACSS 601</title>
       <dc:creator>Meredith Rolfe</dc:creator>
