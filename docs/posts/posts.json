@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-06-25-iris/",
+    "title": "Stephen Curry",
+    "description": "GOAT",
+    "author": [
+      {
+        "name": "Satwik Goyal",
+        "url": {}
+      }
+    ],
+    "date": "2021-06-25",
+    "categories": [],
+    "contents": "\n\nHere is a picture of Steph\n\n\n\n\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-06-25T13:44:53+05:30",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-06-24-iris/",
     "title": "iris",
     "description": "I have changed the text here. Go Dub Nation!",
@@ -13,7 +30,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-25T12:28:05+05:30",
+    "last_modified": "2021-06-25T13:44:50+05:30",
     "input_file": {}
   },
   {
@@ -30,7 +47,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-25T12:28:08+05:30",
+    "last_modified": "2021-06-25T13:44:52+05:30",
     "input_file": {}
   },
   {
@@ -47,7 +64,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-25T12:27:57+05:30",
+    "last_modified": "2021-06-25T13:44:45+05:30",
     "input_file": {}
   },
   {
@@ -59,7 +76,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-25T12:27:58+05:30",
+    "last_modified": "2021-06-25T13:44:46+05:30",
     "input_file": {}
   },
   {
@@ -76,7 +93,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-25T12:28:01+05:30",
+    "last_modified": "2021-06-25T13:44:48+05:30",
     "input_file": {}
   },
   {
@@ -93,7 +110,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-25T12:28:04+05:30",
+    "last_modified": "2021-06-25T13:44:49+05:30",
     "input_file": {}
   },
   {
@@ -112,7 +129,7 @@
     ],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-25T12:28:12+05:30",
+    "last_modified": "2021-06-25T13:44:54+05:30",
     "input_file": {}
   }
 ]
