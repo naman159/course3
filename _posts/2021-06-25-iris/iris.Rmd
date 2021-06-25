@@ -1,0 +1,28 @@
+---
+title: "Stephen Curry"
+description: |
+  GOAT
+author: Satwik Goyal
+date: 2021-06-25
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<center>Here is a picture of Steph</center>
+
+```{r, out.width="50%", echo=FALSE}
+# Define variable containing url
+url <- "https://olympics.nbcsports.com/wp-content/uploads/sites/10/2021/06/GettyImages-1232315431-e1624368065792.jpg"
+```
+<center><img src="`r url`"></center>
+
+
+
+
