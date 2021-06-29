@@ -1,0 +1,15 @@
+---
+title: "Lessons"
+site: distill::distill_website
+---
+
+- [1_basics](https://dacss.shinyapps.io/1_basics/)
+- [Programming](https://nranawat.shinyapps.io/Programming/)
+- [1_programming](https://dacss.shinyapps.io/1_programming/)
+- [2_datawrangling](https://dacss.shinyapps.io/2_datawrangling/)
+- [3_introvisualization](https://dacss.shinyapps.io/3_introvisualization/)
+- [4_advancedvisualization](https://dacss.shinyapps.io/4_advancedvisualization/)
+- [5_transformingdata](https://dacss.shinyapps.io/5_transformingdata/)
+- [6_datastructures](https://dacss.shinyapps.io/6_datastructures/)
+- [7_advancedprogramming](https://dacss.shinyapps.io/7_advancedprogramming/)
+- [8_modelingbasics](https://dacss.shinyapps.io/8_modelingbasics/)
