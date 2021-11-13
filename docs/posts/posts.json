@@ -1,133 +1,332 @@
 [
   {
-    "path": "posts/2021-06-25-india/",
-    "title": "The Republic of India",
-    "description": "A short description of the Prime Minister of India.",
+    "path": "posts/first-blog-post-using-distill/",
+    "title": "First blog post using Distill",
+    "description": "I'm going to make my first blog post. Once I figure that out, I'll try reading in some data.I am also experimenting with R Markdown text formatting such as **bold text** and *italics*",
+    "author": [],
+    "date": "2021-10-26",
+    "categories": [],
+    "contents": "\nFirst I need to load my packages by using the library command and this chunk:\n{r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE) library(tidyverse) library(readr) library(readxl)\nBut oh no. I want this code to be displayed in 4 rows. This can be done by adding two spaces at the end of each line:\n{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\nlibrary(tidyverse)\nlibrary(readr)\nlibrary(readxl)\nlibrary(csv)\nI’m going to in work with data from the set about cereal. I want to first establish my working directory. I can find the current working directory with the command getwd()\n\n\ngetwd()\n\n\n[1] \"C:/Users/advai/OneDrive/Desktop/DACSS/DACSS601Fall21/_posts/2021-09-29-first-blog-post-using-distill\"\n\nI’m going to set the directory just to be sure I’m working with the right folders and files.\n\n\n#setwd(\"~/R/DACSS601Fall21/_posts/2021-09-29-first-blog-post-using-distill\")\n\n\n\nNow I’m going to read in a csv data set about cereal. This following chunk creates a new tab that contains a table with the cereal data\n\n\ncereal <- read.csv(\"cereal.csv\")\nView(cereal)\n\n\n\nIf I need to figure out the dimensions of the data set, or get other information, I can use a number of commands. Using dim() returns info on the dimensions. In this case, there are 20 rows and 4 columns in the cereal.csv file.\n\n\ndim(cereal)\n\n\n[1] 20  4\n\nI can use colnames() to get the name of each column. In this case, the column names are “Cereal”, “Sodium”, “Sugar” and “Type”\n\n\ncolnames(cereal)\n\n\n[1] \"Cereal\" \"Sodium\" \"Sugar\"  \"Type\"  \n\nSince I assigned the csv file to the variable cereal, I can retrieve the data by simply calling the function by writing “cereal”.\n\n\ncereal\n\n\n                  Cereal Sodium Sugar Type\n1    Frosted Mini Wheats      0    11    A\n2            Raisin Bran    340    18    A\n3               All Bran     70     5    A\n4            Apple Jacks    140    14    C\n5         Captain Crunch    200    12    C\n6               Cheerios    180     1    C\n7  Cinnamon Toast Crunch    210    10    C\n8     Crackling Oat Bran    150    16    A\n9              Fiber One    100     0    A\n10        Frosted Flakes    130    12    C\n11           Froot Loops    140    14    C\n12 Honey Bunches of Oats    180     7    A\n13    Honey Nut Cheerios    190     9    C\n14                  Life    160     6    C\n15         Rice Krispies    290     3    C\n16          Honey Smacks     50    15    A\n17             Special K    220     4    A\n18              Wheaties    180     4    A\n19           Corn Flakes    200     3    A\n20             Honeycomb    210    11    C\n\nThese are the very basics of reading in data. I am excited to keep learning how to use R and R Markdown, and how to manipulate and utilize data.\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n  \n    \n      \n       \n      Comment on this article\n    \n    \n      Share:  \n      \n        \n      \n      \n        \n      \n    \n  \n  \n  \nvar disqus_config = function () {\n  this.page.url = 'https://mrolfe.github.io/DACSS601Fall21/posts/2021-09-29-first-blog-post-using-distill/';\n  this.page.identifier = 'posts/2021-09-29-first-blog-post-using-distill/';\n};\n(function() {\n  var d = document, s = d.createElement('script');\n  s.src = 'https://dacss-course-github.disqus.com/embed.js';\n  s.setAttribute('data-timestamp', +new Date());\n  (d.head || d.body).appendChild(s);\n})();\n\n\n",
+    "preview": "posts/first-blog-post-using-distill/../../images/white-dacss-wordmark.png",
+    "last_modified": "2021-10-26T20:27:21-04:00",
+    "input_file": {},
+    "preview_width": 1492,
+    "preview_height": 245
+  },
+  {
+    "path": "posts/hw3-transforming-the-us-public-schools-data-set/",
+    "title": "HW#3 - Transforming the US public schools data set",
+    "description": "Using the public school characteristic data set collected in the 2017-2018 school year",
     "author": [
       {
-        "name": "Narendra Modi",
+        "name": "Brittany Kenison",
         "url": {}
       }
     ],
-    "date": "2021-06-25",
+    "date": "2021-10-26",
     "categories": [],
-    "contents": "\nSome text on India.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-06-29T22:43:50+05:30",
-    "input_file": {}
+    "contents": "\nReview\nWe ended the last blog post by looking at the data fields provided. The information appears to capture school location and contact information, student enrollment by grade, broken down by race/ethnicity and gender, and number of students by grade.\nHere is a recap of all fields:\n\n\nShow code\n\n#read data from public school characteristics file\npsc <- read_csv(\"../../_data/Public_School_Characteristics_2017-18.csv\")\n\n#display all column names\ncolnames(psc)\n\n\n [1] \"X\"                \"Y\"                \"OBJECTID\"        \n [4] \"NCESSCH\"          \"NMCNTY\"           \"SURVYEAR\"        \n [7] \"STABR\"            \"LEAID\"            \"ST_LEAID\"        \n[10] \"LEA_NAME\"         \"SCH_NAME\"         \"LSTREET1\"        \n[13] \"LSTREET2\"         \"LSTREET3\"         \"LCITY\"           \n[16] \"LSTATE\"           \"LZIP\"             \"LZIP4\"           \n[19] \"PHONE\"            \"GSLO\"             \"GSHI\"            \n[22] \"VIRTUAL\"          \"TOTFRL\"           \"FRELCH\"          \n[25] \"REDLCH\"           \"PK\"               \"KG\"              \n[28] \"G01\"              \"G02\"              \"G03\"             \n[31] \"G04\"              \"G05\"              \"G06\"             \n[34] \"G07\"              \"G08\"              \"G09\"             \n[37] \"G10\"              \"G11\"              \"G12\"             \n[40] \"G13\"              \"TOTAL\"            \"MEMBER\"          \n[43] \"AM\"               \"HI\"               \"BL\"              \n[46] \"WH\"               \"HP\"               \"TR\"              \n[49] \"FTE\"              \"LATCOD\"           \"LONCOD\"          \n[52] \"ULOCALE\"          \"STUTERATIO\"       \"STITLEI\"         \n[55] \"AMALM\"            \"AMALF\"            \"ASALM\"           \n[58] \"ASALF\"            \"HIALM\"            \"HIALF\"           \n[61] \"BLALM\"            \"BLALF\"            \"WHALM\"           \n[64] \"WHALF\"            \"HPALM\"            \"HPALF\"           \n[67] \"TRALM\"            \"TRALF\"            \"TOTMENROL\"       \n[70] \"TOTFENROL\"        \"STATUS\"           \"UG\"              \n[73] \"AE\"               \"SCHOOL_TYPE_TEXT\" \"SY_STATUS_TEXT\"  \n[76] \"SCHOOL_LEVEL\"     \"AS\"               \"CHARTER_TEXT\"    \n[79] \"MAGNET_TEXT\"     \n\nWhat should this data represent?\nBased on the data points, I’ve outlined my research interests into three categories:\nnumber of schools by state\ncounts of schools by rural/urban location\nnumber of students by grade\nSelecting data\nBased on the defined interests above, we can narrow down the data set to following fields:\n\n\nShow code\n\n#update table by selecting fields to be used for analysis\npsc <- psc%>%\n  select (LEA_NAME, SCH_NAME, LSTATE, FRELCH, REDLCH, ULOCALE, STUTERATIO, FTE, PK:G13) \n\n#display column names of updated table\ncolnames(psc)\n\n\n [1] \"LEA_NAME\"   \"SCH_NAME\"   \"LSTATE\"     \"FRELCH\"     \"REDLCH\"    \n [6] \"ULOCALE\"    \"STUTERATIO\" \"FTE\"        \"PK\"         \"KG\"        \n[11] \"G01\"        \"G02\"        \"G03\"        \"G04\"        \"G05\"       \n[16] \"G06\"        \"G07\"        \"G08\"        \"G09\"        \"G10\"       \n[21] \"G11\"        \"G12\"        \"G13\"       \n\nMake columns readable\nNext, let’s rename the columns into a more readable format:\n\n\nShow code\n\n#rename columns into a readable format\npsc <- psc %>%\n  rename(District = LEA_NAME, School = SCH_NAME, State = LSTATE, Free_Lunch = FRELCH, Reduced_Lunch = REDLCH, Rural_Urban_Status  = ULOCALE, Student_Teacher_Ratio = STUTERATIO, Teacher_counts = FTE)\n\n#display updated column names\ncolnames(psc)\n\n\n [1] \"District\"              \"School\"               \n [3] \"State\"                 \"Free_Lunch\"           \n [5] \"Reduced_Lunch\"         \"Rural_Urban_Status\"   \n [7] \"Student_Teacher_Ratio\" \"Teacher_counts\"       \n [9] \"PK\"                    \"KG\"                   \n[11] \"G01\"                   \"G02\"                  \n[13] \"G03\"                   \"G04\"                  \n[15] \"G05\"                   \"G06\"                  \n[17] \"G07\"                   \"G08\"                  \n[19] \"G09\"                   \"G10\"                  \n[21] \"G11\"                   \"G12\"                  \n[23] \"G13\"                  \n\nDivide and conquor\nNow that we have distilled (get it?) the data down to only the necessary information, there is one final step to wrangle (I’m sorry) the data: create two tables.\nWhy two tables? The counts of students by grade need to be collapsed into one column to represent the grade variable. If we pivot within the same table, other numeric values will be repeated (for example, the free and reduced lunch counts) for each grade and school. This could cause mathematical errors later on if we are not careful.\nThe first table will reflect one row per school with other characteristic information, sorted alphabetically by State, District, then School:\n\n\nShow code\n\n##create a new table (psc_char) with school level characteristic data with one row per school\npsc_char <- psc%>%\nselect (State, District, School, Free_Lunch, Reduced_Lunch, Rural_Urban_Status, Student_Teacher_Ratio, Teacher_counts)%>%\n  arrange(State, District, School)\n\n#display a subset of the results\npaged_table(psc_char, options=list(rows.print = 10, max.print = 100))\n\n\n\n\n{\"columns\":[{\"label\":[\"State\"],\"name\":[1],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"District\"],\"name\":[2],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"School\"],\"name\":[3],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"Free_Lunch\"],\"name\":[4],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"Reduced_Lunch\"],\"name\":[5],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"Rural_Urban_Status\"],\"name\":[6],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"Student_Teacher_Ratio\"],\"name\":[7],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"Teacher_counts\"],\"name\":[8],\"type\":[\"dbl\"],\"align\":[\"right\"]}],\"data\":[{\"1\":\"AK\",\"2\":\"Alaska Gateway School District\",\"3\":\"Alaska REACH Academy\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"43-Rural: Remote\",\"7\":\"51.11\",\"8\":\"0.90\"},{\"1\":\"AK\",\"2\":\"Alaska Gateway School District\",\"3\":\"Dot Lake School\",\"4\":\"5\",\"5\":\"0\",\"6\":\"43-Rural: Remote\",\"7\":\"11.11\",\"8\":\"0.90\"},{\"1\":\"AK\",\"2\":\"Alaska Gateway School District\",\"3\":\"Eagle Community School\",\"4\":\"15\",\"5\":\"0\",\"6\":\"43-Rural: Remote\",\"7\":\"14.21\",\"8\":\"1.90\"},{\"1\":\"AK\",\"2\":\"Alaska Gateway School District\",\"3\":\"Mentasta Lake School\",\"4\":\"31\",\"5\":\"0\",\"6\":\"43-Rural: Remote\",\"7\":\"10.73\",\"8\":\"2.89\"},{\"1\":\"AK\",\"2\":\"Alaska Gateway School District\",\"3\":\"Tanacross School\",\"4\":\"12\",\"5\":\"0\",\"6\":\"43-Rural: Remote\",\"7\":\"16.00\",\"8\":\"0.75\"},{\"1\":\"AK\",\"2\":\"Alaska Gateway School District\",\"3\":\"Tetlin School\",\"4\":\"23\",\"5\":\"0\",\"6\":\"43-Rural: Remote\",\"7\":\"8.46\",\"8\":\"2.72\"},{\"1\":\"AK\",\"2\":\"Alaska Gateway School District\",\"3\":\"Tok School\",\"4\":\"204\",\"5\":\"0\",\"6\":\"43-Rural: Remote\",\"7\":\"14.27\",\"8\":\"14.30\"},{\"1\":\"AK\",\"2\":\"Alaska Gateway School District\",\"3\":\"Walter Northway School\",\"4\":\"40\",\"5\":\"0\",\"6\":\"43-Rural: Remote\",\"7\":\"10.33\",\"8\":\"4.55\"},{\"1\":\"AK\",\"2\":\"Aleutian Region School District\",\"3\":\"Adak School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"43-Rural: Remote\",\"7\":\"7.50\",\"8\":\"2.00\"},{\"1\":\"AK\",\"2\":\"Aleutian Region School District\",\"3\":\"Yakov E. Netsvetov School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"43-Rural: Remote\",\"7\":\"6.00\",\"8\":\"2.00\"},{\"1\":\"AK\",\"2\":\"Aleutians East Borough School District\",\"3\":\"Akutan School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"43-Rural: Remote\",\"7\":\"6.63\",\"8\":\"1.96\"},{\"1\":\"AK\",\"2\":\"Aleutians East Borough School District\",\"3\":\"False Pass School\",\"4\":\"-9\",\"5\":\"-9\",\"6\":\"43-Rural: Remote\",\"7\":\"4.32\",\"8\":\"1.39\"},{\"1\":\"AK\",\"2\":\"Aleutians East Borough School District\",\"3\":\"King Cove School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"43-Rural: Remote\",\"7\":\"7.83\",\"8\":\"12.00\"},{\"1\":\"AK\",\"2\":\"Aleutians East Borough School District\",\"3\":\"Sand Point School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"43-Rural: Remote\",\"7\":\"9.27\",\"8\":\"12.95\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Abbott Loop Elementary\",\"4\":\"227\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"15.85\",\"8\":\"20.13\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Airport Heights Elementary\",\"4\":\"333\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"14.83\",\"8\":\"22.45\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Alaska Middle College School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"31-Town: Fringe\",\"7\":\"72.04\",\"8\":\"2.11\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Alaska Native Cultural Charter School\",\"4\":\"289\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"13.53\",\"8\":\"21.36\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Alaska State School for Deaf and Hard of Hearing\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"NA\",\"8\":\"0.00\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Alpenglow Elementary\",\"4\":\"74\",\"5\":\"28\",\"6\":\"31-Town: Fringe\",\"7\":\"16.24\",\"8\":\"31.77\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Anchorage STrEaM Academy\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"11.91\",\"8\":\"9.15\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Aquarian Charter School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"17.40\",\"8\":\"22.13\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Aurora Elementary\",\"4\":\"122\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"14.95\",\"8\":\"14.05\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"AVAIL School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"24.39\",\"8\":\"4.10\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Bartlett High School\",\"4\":\"1024\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"17.24\",\"8\":\"81.04\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Baxter Elementary\",\"4\":\"264\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"13.61\",\"8\":\"26.60\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Bayshore Elementary\",\"4\":\"98\",\"5\":\"9\",\"6\":\"11-City: Large\",\"7\":\"18.28\",\"8\":\"25.60\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Bear Valley Elementary\",\"4\":\"16\",\"5\":\"12\",\"6\":\"41-Rural: Fringe\",\"7\":\"17.86\",\"8\":\"23.12\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Benson Secondary/S.E.A.R.C.H.\",\"4\":\"277\",\"5\":\"0\",\"6\":\"41-Rural: Fringe\",\"7\":\"20.70\",\"8\":\"13.38\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Birchwood ABC Elementary\",\"4\":\"51\",\"5\":\"5\",\"6\":\"31-Town: Fringe\",\"7\":\"14.19\",\"8\":\"20.58\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Bowman Elementary\",\"4\":\"147\",\"5\":\"15\",\"6\":\"11-City: Large\",\"7\":\"16.12\",\"8\":\"37.40\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Campbell STEM Elementary\",\"4\":\"157\",\"5\":\"29\",\"6\":\"11-City: Large\",\"7\":\"16.50\",\"8\":\"21.39\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Central Middle School of Science\",\"4\":\"323\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"17.09\",\"8\":\"25.69\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Chester Valley Elementary\",\"4\":\"218\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"14.67\",\"8\":\"18.20\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Chinook Elementary\",\"4\":\"418\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"16.28\",\"8\":\"32.92\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Chugach Optional Elementary\",\"4\":\"7\",\"5\":\"6\",\"6\":\"11-City: Large\",\"7\":\"18.01\",\"8\":\"14.27\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Chugiak Elementary\",\"4\":\"76\",\"5\":\"18\",\"6\":\"41-Rural: Fringe\",\"7\":\"16.93\",\"8\":\"29.47\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Chugiak High School\",\"4\":\"182\",\"5\":\"42\",\"6\":\"31-Town: Fringe\",\"7\":\"20.34\",\"8\":\"49.37\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Clark Middle School\",\"4\":\"900\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"16.57\",\"8\":\"54.31\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"College Gate Elementary\",\"4\":\"277\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"16.91\",\"8\":\"20.40\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Creekside Park Elementary\",\"4\":\"389\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"15.47\",\"8\":\"28.05\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Crossroads School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"7.39\",\"8\":\"2.03\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Denali Montessori Elementary\",\"4\":\"0\",\"5\":\"183\",\"6\":\"11-City: Large\",\"7\":\"15.73\",\"8\":\"27.09\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Dimond High School\",\"4\":\"397\",\"5\":\"60\",\"6\":\"11-City: Large\",\"7\":\"21.36\",\"8\":\"77.33\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Eagle Academy Charter School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"31-Town: Fringe\",\"7\":\"18.64\",\"8\":\"9.44\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Eagle River Elementary\",\"4\":\"146\",\"5\":\"18\",\"6\":\"31-Town: Fringe\",\"7\":\"17.31\",\"8\":\"24.67\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Eagle River High School\",\"4\":\"78\",\"5\":\"67\",\"6\":\"31-Town: Fringe\",\"7\":\"23.39\",\"8\":\"37.45\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"East High School\",\"4\":\"1557\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"18.84\",\"8\":\"107.79\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Fairview Elementary\",\"4\":\"413\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"14.68\",\"8\":\"28.13\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Family Partnership Charter School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"57.30\",\"8\":\"11.71\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Fire Lake Elementary\",\"4\":\"100\",\"5\":\"23\",\"6\":\"31-Town: Fringe\",\"7\":\"15.45\",\"8\":\"21.10\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Frontier Charter School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"132.27\",\"8\":\"2.20\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Girdwood School\",\"4\":\"19\",\"5\":\"9\",\"6\":\"42-Rural: Distant\",\"7\":\"13.07\",\"8\":\"14.61\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Gladys Wood Elementary\",\"4\":\"185\",\"5\":\"25\",\"6\":\"11-City: Large\",\"7\":\"15.06\",\"8\":\"24.84\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Goldenview Middle School\",\"4\":\"103\",\"5\":\"13\",\"6\":\"11-City: Large\",\"7\":\"18.43\",\"8\":\"38.31\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Government Hill Elementary\",\"4\":\"312\",\"5\":\"0\",\"6\":\"41-Rural: Fringe\",\"7\":\"16.71\",\"8\":\"28.24\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Gruening Middle School\",\"4\":\"91\",\"5\":\"56\",\"6\":\"31-Town: Fringe\",\"7\":\"19.38\",\"8\":\"31.79\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Hanshew Middle School\",\"4\":\"257\",\"5\":\"37\",\"6\":\"11-City: Large\",\"7\":\"17.30\",\"8\":\"39.42\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Highland Academy Charter\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"14.45\",\"8\":\"11.14\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Homestead Elementary\",\"4\":\"58\",\"5\":\"4\",\"6\":\"31-Town: Fringe\",\"7\":\"16.98\",\"8\":\"19.20\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Huffman Elementary\",\"4\":\"48\",\"5\":\"5\",\"6\":\"11-City: Large\",\"7\":\"15.03\",\"8\":\"24.49\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Inlet View Elementary\",\"4\":\"63\",\"5\":\"15\",\"6\":\"11-City: Large\",\"7\":\"17.10\",\"8\":\"14.15\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Kasuun Elementary\",\"4\":\"172\",\"5\":\"29\",\"6\":\"11-City: Large\",\"7\":\"14.36\",\"8\":\"28.84\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Kincaid Elementary\",\"4\":\"140\",\"5\":\"10\",\"6\":\"11-City: Large\",\"7\":\"16.89\",\"8\":\"32.04\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"King Career Center\",\"4\":\"0\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"0.00\",\"8\":\"33.78\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Klatt Elementary\",\"4\":\"327\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"14.06\",\"8\":\"28.94\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Lake Hood Elementary\",\"4\":\"184\",\"5\":\"40\",\"6\":\"11-City: Large\",\"7\":\"14.65\",\"8\":\"24.85\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Lake Otis Elementary\",\"4\":\"288\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"15.63\",\"8\":\"27.84\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"McLaughlin Secondary School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"5.80\",\"8\":\"13.11\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Mears Middle School\",\"4\":\"248\",\"5\":\"42\",\"6\":\"11-City: Large\",\"7\":\"19.49\",\"8\":\"41.14\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Mirror Lake Middle School\",\"4\":\"147\",\"5\":\"24\",\"6\":\"31-Town: Fringe\",\"7\":\"17.41\",\"8\":\"39.23\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Mountain View Elementary\",\"4\":\"288\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"13.68\",\"8\":\"21.05\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Mt. Spurr Elementary\",\"4\":\"18\",\"5\":\"39\",\"6\":\"11-City: Large\",\"7\":\"15.87\",\"8\":\"16.13\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Muldoon Elementary\",\"4\":\"454\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"14.89\",\"8\":\"30.50\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Nicholas J. Begich Middle School\",\"4\":\"827\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"19.14\",\"8\":\"52.62\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"North Star Elementary\",\"4\":\"0\",\"5\":\"438\",\"6\":\"11-City: Large\",\"7\":\"16.70\",\"8\":\"26.29\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Northern Lights ABC K-8 School\",\"4\":\"104\",\"5\":\"23\",\"6\":\"11-City: Large\",\"7\":\"21.25\",\"8\":\"29.55\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Northwood ABC\",\"4\":\"308\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"14.88\",\"8\":\"23.38\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Nunaka Valley Elementary\",\"4\":\"173\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"14.74\",\"8\":\"17.10\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"O'Malley Elementary\",\"4\":\"36\",\"5\":\"8\",\"6\":\"11-City: Large\",\"7\":\"16.30\",\"8\":\"18.65\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Ocean View Elementary\",\"4\":\"145\",\"5\":\"31\",\"6\":\"11-City: Large\",\"7\":\"18.20\",\"8\":\"24.94\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Orion Elementary School\",\"4\":\"43\",\"5\":\"48\",\"6\":\"11-City: Large\",\"7\":\"17.79\",\"8\":\"15.23\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"PAIDEIA Cooperative School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"44.63\",\"8\":\"3.07\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Polaris K-12 School\",\"4\":\"89\",\"5\":\"13\",\"6\":\"11-City: Large\",\"7\":\"18.13\",\"8\":\"26.58\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Ptarmigan Elementary\",\"4\":\"367\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"15.03\",\"8\":\"28.88\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Rabbit Creek Elementary\",\"4\":\"94\",\"5\":\"9\",\"6\":\"11-City: Large\",\"7\":\"17.41\",\"8\":\"27.45\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Ravenwood Elementary\",\"4\":\"46\",\"5\":\"17\",\"6\":\"41-Rural: Fringe\",\"7\":\"17.84\",\"8\":\"27.30\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Rilke Schule Charter School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"18.30\",\"8\":\"27.38\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Rogers Park Elementary\",\"4\":\"160\",\"5\":\"39\",\"6\":\"11-City: Large\",\"7\":\"17.63\",\"8\":\"31.14\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Romig Middle School\",\"4\":\"328\",\"5\":\"36\",\"6\":\"11-City: Large\",\"7\":\"19.02\",\"8\":\"40.48\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Russian Jack Elementary\",\"4\":\"315\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"10.72\",\"8\":\"34.23\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"S.A.V.E. High School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"17.92\",\"8\":\"8.93\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Sand Lake Elementary\",\"4\":\"207\",\"5\":\"36\",\"6\":\"11-City: Large\",\"7\":\"17.22\",\"8\":\"37.99\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Scenic Park Elementary\",\"4\":\"261\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"18.60\",\"8\":\"24.35\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Service High School\",\"4\":\"450\",\"5\":\"87\",\"6\":\"11-City: Large\",\"7\":\"21.32\",\"8\":\"74.75\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"South Anchorage High School\",\"4\":\"175\",\"5\":\"22\",\"6\":\"11-City: Large\",\"7\":\"22.64\",\"8\":\"62.33\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Spring Hill Elementary\",\"4\":\"308\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"15.10\",\"8\":\"27.42\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Steller Secondary School\",\"4\":\"-1\",\"5\":\"-1\",\"6\":\"11-City: Large\",\"7\":\"19.07\",\"8\":\"15.00\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Susitna Elementary\",\"4\":\"283\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"15.61\",\"8\":\"27.35\"},{\"1\":\"AK\",\"2\":\"Anchorage School District\",\"3\":\"Taku Elementary\",\"4\":\"278\",\"5\":\"0\",\"6\":\"11-City: Large\",\"7\":\"16.47\",\"8\":\"22.65\"}],\"options\":{\"columns\":{\"min\":{},\"max\":[10]},\"rows\":{\"min\":[10],\"max\":[10]},\"pages\":{}}}\n  \n\nIn the second table, each one row will represent one grade per school and the number of students enrolled:\n\n\nShow code\n\n##create a second table with the counts of students by grade per school.\n##pivot grade columns into a single variable and store the values in new column.\npsc_grade <- psc %>%\n  pivot_longer(PK:G13, names_to = \"Grade\", values_to= \"Grade_Counts\") %>%\n  select(State, School, Grade, Grade_Counts)%>%\n  arrange(State, School, Grade, Grade_Counts)\n\n#display a subset of the results\nknitr::kable(head(psc_grade), \"simple\", caption = \"Student counts by grade\")\n\n\nTable 1: Student counts by grade\nState\nSchool\nGrade\nGrade_Counts\nAK\nAbbott Loop Elementary\nG01\n33\nAK\nAbbott Loop Elementary\nG02\n38\nAK\nAbbott Loop Elementary\nG03\n53\nAK\nAbbott Loop Elementary\nG04\n38\nAK\nAbbott Loop Elementary\nG05\n53\nAK\nAbbott Loop Elementary\nG06\n52\n\nSummarizing\nWith our data sets ready, we can begin our analysis in the three research interest areas.\nState school counts\nTo find the six states/territories with the lowest number of schools, we group by schools, count the number of rows and leave the sorting default:\n\n\nShow code\n\n#counts of schools by state using psc_char table since it represents a single school per row\n#Sort from lowest to highest count\nstate_counts <- psc_char %>%\n  group_by(State) %>%\n  summarise(count = n()) %>%\n  arrange(count)\n\n#display results\nkbl(head(state_counts[,1:2]), \"simple\", caption = \"Six states with lowest number of schools\")\n\n\nTable 2: Six states with lowest number of schools\nState\ncount\nAS\n28\nVI\n28\nGU\n41\nDC\n227\nDE\n229\nHI\n294\n\nTo find the six states and territories with the highest number of schools, we use the same code as above, except we add the descending to the sorting function:\n\n\nShow code\n\n#counts of schools by state/territory using psc_char table since it represents a single school per row\n#sort by highest to lowest counts\nstate_counts <- psc_char %>%\n  group_by(State) %>%\n  summarise(count = n()) %>%\n  arrange(desc(count))\n\n#display results\nkbl(head(state_counts[,1:2]), \"simple\", caption = \"Six states with the highest number of schools\")\n\n\nTable 3: Six states with the highest number of schools\nState\ncount\nCA\n10325\nTX\n9320\nNY\n4808\nFL\n4377\nIL\n4245\nMI\n3736\n\nUrban/Rural schools\nIn the characteristics table, each school has a ‘locale’ classification to indicate if it is urban, suburban, or rural. To find the total by category, we will simply apply the group by function.\n\n\nShow code\n\n#find the number of schools by the locale type (aka, rural/urban)\nlocale_type <- psc_char %>%\n  group_by(Rural_Urban_Status)\n\n#display results\ntable(select(locale_type, Rural_Urban_Status))\n\n\n\n     11-City: Large   12-City: Mid-size      13-City: Small \n              14851                5876                6635 \n   21-Suburb: Large 22-Suburb: Mid-size    23-Suburb: Small \n              26772                3305                2053 \n    31-Town: Fringe    32-Town: Distant     33-Town: Remote \n               2963                6266                4138 \n   41-Rural: Fringe   42-Rural: Distant    43-Rural: Remote \n              11179               10279                6412 \n\nThe locale type combines a main type and a sub-type. I am not interested in the sub-types, so let’s group them by the main category by using the case when function:\n\n\nShow code\n\n#group sub-types to report the number of schools by the locale type \nlocaleGroup <- psc_char %>%\n  mutate(LocaleGroup = case_when(\n    Rural_Urban_Status == \"41-Rural: Fringe\" | Rural_Urban_Status == \"42-Rural: Distant\" | Rural_Urban_Status == \"43-Rural: Remote\" ~ \"Rural\", \n    Rural_Urban_Status == \"31-Town: Fringe\" | Rural_Urban_Status == \"32-Town: Distant\" | Rural_Urban_Status == \"33-Town: Remote\" ~ \"Town\",\n    Rural_Urban_Status == \"21-Suburb: Large\" | Rural_Urban_Status == \"21-Suburb: Large\" | Rural_Urban_Status == \"21-Suburb: Large\" ~ \"Suburb\",\n    Rural_Urban_Status == \"11-City: Large\" | Rural_Urban_Status == \"12-City: Mid-size\" | Rural_Urban_Status == \"13-City: Small\" ~ \"City\"\n      ))\n#display results\ntable(select(localeGroup, LocaleGroup))\n\n\n\n  City  Rural Suburb   Town \n 27362  27870  26772  13367 \n\nStudent counts by grade\nThese are the total number of students (all US States and territories) per grade\n\n\nShow code\n\n#count the number of students for each grade\nt_gradeCount <- psc_grade %>%\n  group_by(Grade) %>%\n  summarise(GradeCount = sum(Grade_Counts))\n\nknitr::kable(t_gradeCount)\n\n\n\nGrade\n\n\nGradeCount\n\n\nG01\n\n\nNA\n\n\nG02\n\n\nNA\n\n\nG03\n\n\nNA\n\n\nG04\n\n\nNA\n\n\nG05\n\n\nNA\n\n\nG06\n\n\nNA\n\n\nG07\n\n\nNA\n\n\nG08\n\n\nNA\n\n\nG09\n\n\nNA\n\n\nG10\n\n\nNA\n\n\nG11\n\n\nNA\n\n\nG12\n\n\nNA\n\n\nG13\n\n\nNA\n\n\nKG\n\n\nNA\n\n\nPK\n\n\nNA\n\n\nOops, I forgot to remove the rows with missing data for grade counts. This makes sense as most schools do not teach all grades.\nHere is the corrected version:\n\n\nShow code\n\n#filter out rows where grade counts are null\n#used same code as above to group grade counts by grade\nt_gradeCountCorrect <- psc_grade %>%\n  filter(!is.na(Grade_Counts))%>%\n  group_by(Grade) %>%\n  summarise(GradeCount = sum(Grade_Counts))\n  \n#display results\n  kable(t_gradeCountCorrect)\n\n\n\nGrade\n\n\nGradeCount\n\n\nG01\n\n\n3696986\n\n\nG02\n\n\n3711657\n\n\nG03\n\n\n3816092\n\n\nG04\n\n\n3887554\n\n\nG05\n\n\n3905346\n\n\nG06\n\n\n3854703\n\n\nG07\n\n\n3805136\n\n\nG08\n\n\n3798140\n\n\nG09\n\n\n4018522\n\n\nG10\n\n\n3854951\n\n\nG11\n\n\n3695166\n\n\nG12\n\n\n3640287\n\n\nG13\n\n\n1\n\n\nKG\n\n\n3710321\n\n\nPK\n\n\n1255504\n\n\nThe End\nThanks for reading!\n\n\n\n  \n    \n      \n       \n      Comment on this article\n    \n    \n      Share:  \n      \n        \n      \n      \n        \n      \n    \n  \n  \n  \nvar disqus_config = function () {\n  this.page.url = 'https://mrolfe.github.io/DACSS601Fall21/posts/2021-10-03-hw3-brittany-kenison/';\n  this.page.identifier = 'posts/2021-10-03-hw3-brittany-kenison/';\n};\n(function() {\n  var d = document, s = d.createElement('script');\n  s.src = 'https://dacss-course-github.disqus.com/embed.js';\n  s.setAttribute('data-timestamp', +new Date());\n  (d.head || d.body).appendChild(s);\n})();\n\n\n",
+    "preview": "posts/hw3-transforming-the-us-public-schools-data-set/../../images/white-dacss-wordmark.png",
+    "last_modified": "2021-10-26T20:56:36-04:00",
+    "input_file": {},
+    "preview_width": 1492,
+    "preview_height": 245
   },
   {
-    "path": "posts/2021-06-25-iris/",
-    "title": "Stephen Curry",
-    "description": "GOAT",
+    "path": "posts/hw-2-updated/",
+    "title": "HW-2 Updated",
+    "description": "Reading in blogpost data",
     "author": [
       {
-        "name": "Satwik Goyal",
+        "name": "Justin",
         "url": {}
       }
     ],
-    "date": "2021-06-25",
+    "date": "2021-10-17",
     "categories": [],
-    "contents": "\n\nHere is a picture of Steph\n\n\n\n\n\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-06-29T22:43:52+05:30",
-    "input_file": {}
+    "contents": "\nI am looking to read in a dataset. Specifically eggs_tidy.csv which shows Month,year,large_half_dozen,large_dozen,extra_large_half_dozen,extra_large_dozen eggs\n\n\n\nI will now show a visualization of the table\n\n\n\n\n\n\n  \n    \n      \n       \n      Comment on this article\n    \n    \n      Share:  \n      \n        \n      \n      \n        \n      \n    \n  \n  \n  \nvar disqus_config = function () {\n  this.page.url = 'https://mrolfe.github.io/DACSS601Fall21/posts/2021-10-04-hw2-justin/';\n  this.page.identifier = 'posts/2021-10-04-hw2-justin/';\n};\n(function() {\n  var d = document, s = d.createElement('script');\n  s.src = 'https://dacss-course-github.disqus.com/embed.js';\n  s.setAttribute('data-timestamp', +new Date());\n  (d.head || d.body).appendChild(s);\n})();\n\n\n",
+    "preview": "posts/hw-2-updated/hw2-justin_files/figure-html5/unnamed-chunk-2-1.png",
+    "last_modified": "2021-10-17T10:26:47-04:00",
+    "input_file": {},
+    "preview_width": 1248,
+    "preview_height": 768
   },
   {
-    "path": "posts/2021-06-24-iris/",
-    "title": "iris",
-    "description": "I have changed the text here. Go Dub Nation!",
+    "path": "posts/hw1allysonbeach/",
+    "title": "hw1allysonbeach",
+    "description": "HW1",
     "author": [
       {
-        "name": "Satwik Goyal",
+        "name": "Allyson Beach",
         "url": {}
       }
     ],
-    "date": "2021-06-24",
+    "date": "2021-10-17",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-06-29T22:43:47+05:30",
-    "input_file": {}
+    "contents": "\nIntroduction\nHello everyone! My name is Allyson Beach. I have never used R before this course, but am excited to learn more about it. I am in my final semester in the CS masters program. For this first post, I will plot some simulated data.\nObjective\nWe will create a vector through the sequence function from 1 to 10 by increments of 1 (default). We will then plot this data with ggplot2 package as a function of y = 2x.\nData\n\n\nx <- seq(1, 10)\nx\n\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\ny <- x*2\ny\n\n\n [1]  2  4  6  8 10 12 14 16 18 20\n\nWe can also change the x data to be incremented by 2.\n\n\nx <- seq(1,20, 2)\nx\n\n\n [1]  1  3  5  7  9 11 13 15 17 19\n\ny <- x*2\ny\n\n\n [1]  2  6 10 14 18 22 26 30 34 38\n\nHere we will plot the data using the ggplot2 package.\n\n\nfigure <- ggplot2::qplot(x,y)\nshow(figure)\n\n\n\n\n\n\n\n  \n    \n      \n       \n      Comment on this article\n    \n    \n      Share:  \n      \n        \n      \n      \n        \n      \n    \n  \n  \n  \nvar disqus_config = function () {\n  this.page.url = 'https://mrolfe.github.io/DACSS601Fall21/posts/2021-09-30-hw1allysonbeach/';\n  this.page.identifier = 'posts/2021-09-30-hw1allysonbeach/';\n};\n(function() {\n  var d = document, s = d.createElement('script');\n  s.src = 'https://dacss-course-github.disqus.com/embed.js';\n  s.setAttribute('data-timestamp', +new Date());\n  (d.head || d.body).appendChild(s);\n})();\n\n\n",
+    "preview": "posts/hw1allysonbeach/hw1allysonbeach_files/figure-html5/plot-1.png",
+    "last_modified": "2021-10-17T10:26:55-04:00",
+    "input_file": {},
+    "preview_width": 1248,
+    "preview_height": 768
   },
   {
-    "path": "posts/2021-06-24-test-5/",
-    "title": "test 5",
+    "path": "posts/hw2/",
+    "title": "HW2",
+    "description": "HW2",
+    "author": [
+      {
+        "name": "Allyson Beach",
+        "url": {}
+      }
+    ],
+    "date": "2021-10-04",
+    "categories": [],
+    "contents": "\nBuilt in Datasets: There are some data sets that are provided as packages built in the R code base. This is a great place to start to look at a data set. We will look at the iris data set. It comes in the format as a data.frame which is the default data structure. However, we will convert it to a tibble that allows for some easier data manipulations later on with the as_tibble() function.\n\n\nhead(iris)\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\niris_tibble <- as_tibble(iris)\nhead(iris_tibble)\n\n\n# A tibble: 6 x 5\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n         <dbl>       <dbl>        <dbl>       <dbl> <fct>  \n1          5.1         3.5          1.4         0.2 setosa \n2          4.9         3            1.4         0.2 setosa \n3          4.7         3.2          1.3         0.2 setosa \n4          4.6         3.1          1.5         0.2 setosa \n5          5           3.6          1.4         0.2 setosa \n6          5.4         3.9          1.7         0.4 setosa \n\nThe tibble format shows the different data types for each column. We can examine the data either with the head() function that shows the first 5 or so rows. We can also use the print() function and specify how many rows and all the columns to show. This is one of the areas where tibble differentiates from the normal data.frame. We will use the nyc flight data set for this example.\n\n\n# before print specifications, default 10 rows and only amount of cols that can fit in the screen \nprint(nycflights13::flights)\n\n\n# A tibble: 336,776 x 19\n    year month   day dep_time sched_dep_time dep_delay arr_time\n   <int> <int> <int>    <int>          <int>     <dbl>    <int>\n 1  2013     1     1      517            515         2      830\n 2  2013     1     1      533            529         4      850\n 3  2013     1     1      542            540         2      923\n 4  2013     1     1      544            545        -1     1004\n 5  2013     1     1      554            600        -6      812\n 6  2013     1     1      554            558        -4      740\n 7  2013     1     1      555            600        -5      913\n 8  2013     1     1      557            600        -3      709\n 9  2013     1     1      557            600        -3      838\n10  2013     1     1      558            600        -2      753\n# ... with 336,766 more rows, and 12 more variables:\n#   sched_arr_time <int>, arr_delay <dbl>, carrier <chr>,\n#   flight <int>, tailnum <chr>, origin <chr>, dest <chr>,\n#   air_time <dbl>, distance <dbl>, hour <dbl>, minute <dbl>,\n#   time_hour <dttm>\n\n# allow 5 rows and all columns to print \nprint(nycflights13::flights, n=5, width=Inf)\n\n\n# A tibble: 336,776 x 19\n   year month   day dep_time sched_dep_time dep_delay arr_time\n  <int> <int> <int>    <int>          <int>     <dbl>    <int>\n1  2013     1     1      517            515         2      830\n2  2013     1     1      533            529         4      850\n3  2013     1     1      542            540         2      923\n4  2013     1     1      544            545        -1     1004\n5  2013     1     1      554            600        -6      812\n  sched_arr_time arr_delay carrier flight tailnum origin dest \n           <int>     <dbl> <chr>    <int> <chr>   <chr>  <chr>\n1            819        11 UA        1545 N14228  EWR    IAH  \n2            830        20 UA        1714 N24211  LGA    IAH  \n3            850        33 AA        1141 N619AA  JFK    MIA  \n4           1022       -18 B6         725 N804JB  JFK    BQN  \n5            837       -25 DL         461 N668DN  LGA    ATL  \n  air_time distance  hour minute time_hour          \n     <dbl>    <dbl> <dbl>  <dbl> <dttm>             \n1      227     1400     5     15 2013-01-01 05:00:00\n2      227     1416     5     29 2013-01-01 05:00:00\n3      160     1089     5     40 2013-01-01 05:00:00\n4      183     1576     5     45 2013-01-01 05:00:00\n5      116      762     6      0 2013-01-01 06:00:00\n# ... with 336,771 more rows\n\nExternal Datasets: The built-in datasets are great for practice. However, most data and analysis is done outside of R and has to be read in. These datasets can come in any format from excel sheets to binary. We will use the tidyverse’s readr package to read in some datatsets that are in .csv format.\n\n\nlibrary(here)\n# using the absolute path to read in csv file\nanimal_weights_absolute <- as_tibble(read_csv(\n\"../../_data/animal_weight.csv\"))\n#using relative path to read in the csv file\nanimal_weights_relative <- as_tibble(read_csv(\"../../_data/animal_weight.csv\"))\n#using here to get relative path to read in csv file\nanimal_weights_here <- as_tibble(read_csv(here(\"_data\", \"animal_weight.csv\")))\n\n\n\nInline CSV File: We can also write in a data set into the tibble framework.\n\n\n# we created a data set with that shows a sample of all the different data types you can write into a csv file\nmy_dataset <- read_csv(\n\"'fox', 3, 12.45, TRUE, 2010-01-01\\n'hound', 5, 32.45, FALSE, 2010-01-01\", \ncol_names = c(\"string\", \"integer\", \"decimals\", \"logical\", \"dates\"))\n\n\n\nData Manipulation There are many different data types that can be read in with a dataset. We will review some ways to manipulate these data types to get in a form that is desirable.\nString Manipulation Here are some strings that we will play with, “dog”, “mark”, “London”, and “tile”. Some other functions that were not touched, but can be further evaluated is str_to_lower, str_to_upper, str_to_title, str_sort, str_order, str_wrap, and str_trim.\n\n\n# some strings to work with \nmy_strings <- c(\"dog\", \"mark\", \"London\", \"tile\")\nmy_strings[1]\n\n\n[1] \"dog\"\n\n# can print an vector of string as lines \nwriteLines(my_strings)\n\n\ndog\nmark\nLondon\ntile\n\n# can find the length of strings with str_length\nstr_length(my_strings)\n\n\n[1] 3 4 6 4\n\n# we can concatenate strings as well with *str_c*\nstr_c(\"This is a string called \", my_strings, \"!\")\n\n\n[1] \"This is a string called dog!\"   \n[2] \"This is a string called mark!\"  \n[3] \"This is a string called London!\"\n[4] \"This is a string called tile!\"  \n\nstr_c(\"Hi\", my_strings, \"!\", sep=\", \")\n\n\n[1] \"Hi, dog, !\"    \"Hi, mark, !\"   \"Hi, London, !\" \"Hi, tile, !\"  \n\nstr_c(my_strings, collapse=\", \")\n\n\n[1] \"dog, mark, London, tile\"\n\n#subset of strings can be retrieved with str_sub\nstr_sub(my_strings[3], 1, 3)\n\n\n[1] \"Lon\"\n\nRegular Expressions After some basic manipulations of strings, we can further use this understanding to search and matching patterns with regular expressions. The str_view() allows us to see what expressions match with our pattern. For instance, we can use the regex functionality to see how many types of berries are in the fruit dataset by searching for the pattern “berry”.\n\n\n# we will use the fruit dataset for regex \nhead(fruit)\n\n\n[1] \"apple\"       \"apricot\"     \"avocado\"     \"banana\"     \n[5] \"bell pepper\" \"bilberry\"   \n\n# use str_view to see the regex matches \nstr_view(fruit, \"berry\", match=TRUE)\n\n\n\n{\"x\":{\"html\":\"<ul>\\n  <li>bil<span class='match'>berry<\\/span><\\/li>\\n  <li>black<span class='match'>berry<\\/span><\\/li>\\n  <li>blue<span class='match'>berry<\\/span><\\/li>\\n  <li>boysen<span class='match'>berry<\\/span><\\/li>\\n  <li>cloud<span class='match'>berry<\\/span><\\/li>\\n  <li>cran<span class='match'>berry<\\/span><\\/li>\\n  <li>elder<span class='match'>berry<\\/span><\\/li>\\n  <li>goji <span class='match'>berry<\\/span><\\/li>\\n  <li>goose<span class='match'>berry<\\/span><\\/li>\\n  <li>huckle<span class='match'>berry<\\/span><\\/li>\\n  <li>mul<span class='match'>berry<\\/span><\\/li>\\n  <li>rasp<span class='match'>berry<\\/span><\\/li>\\n  <li>salal <span class='match'>berry<\\/span><\\/li>\\n  <li>straw<span class='match'>berry<\\/span><\\/li>\\n<\\/ul>\"},\"evals\":[],\"jsHooks\":[]}\nFactors Factors are a way to create categories within your data. For instance, we might have many different types of vehicles. With factors, we can create categories of “truck”, “sedan”, “suv”, etc. Another useful aspect of the factor data type is that it can be used to sort the dataset in a specific way instead of just alphabetic. We will work with the gss_cat dataset since it has many factor data types.\n\n\ngss_cat\n\n\n# A tibble: 21,483 x 9\n    year marital         age race  rincome partyid relig denom tvhours\n   <int> <fct>         <int> <fct> <fct>   <fct>   <fct> <fct>   <int>\n 1  2000 Never married    26 White $8000 ~ Ind,ne~ Prot~ Sout~      12\n 2  2000 Divorced         48 White $8000 ~ Not st~ Prot~ Bapt~      NA\n 3  2000 Widowed          67 White Not ap~ Indepe~ Prot~ No d~       2\n 4  2000 Never married    39 White Not ap~ Ind,ne~ Orth~ Not ~       4\n 5  2000 Divorced         25 White Not ap~ Not st~ None  Not ~       1\n 6  2000 Married          25 White $20000~ Strong~ Prot~ Sout~      NA\n 7  2000 Never married    36 White $25000~ Not st~ Chri~ Not ~       3\n 8  2000 Divorced         44 White $7000 ~ Ind,ne~ Prot~ Luth~      NA\n 9  2000 Married          44 White $25000~ Not st~ Prot~ Other       0\n10  2000 Married          47 White $25000~ Strong~ Prot~ Sout~       3\n# ... with 21,473 more rows\n\n# one way to see the levels is to index in the column of interest\ngss_cat %>% .$race %>% levels()\n\n\n[1] \"Other\"          \"Black\"          \"White\"         \n[4] \"Not applicable\"\n\n# another way is to use the count() function\ngss_cat %>% count(race)\n\n\n# A tibble: 3 x 2\n  race      n\n  <fct> <int>\n1 Other  1959\n2 Black  3129\n3 White 16395\n\n# we can use mutate and fct_recode to change factors\n# before we change the factor codes \ngss_cat %>% ggplot(aes(x = rincome)) + geom_bar() + coord_flip() \n\n\n\n# after we change factor codes \ngss_cat %>% \nmutate(rincome = fct_recode(rincome, \n                              \"Less than $1000\" = \"Lt $1000\")) %>%\n  mutate(rincome = fct_recode(rincome, \n                              \"NA\" = \"Not applicable\", \n                              \"NA\" = \"Don't know\", \n                              \"NA\" = \"No answer\", \n                              \"NA\" = \"gRefused\")) %>% \nggplot(aes(x = rincome)) + geom_bar() + coord_flip() \n\n\n\n# can lump the small factors together and remove the \"Not applicable\", \"Don't know\", \"No answer\", \"Refused\" responses\ngss_cat %>% count(rincome)\n\n\n# A tibble: 16 x 2\n   rincome            n\n   <fct>          <int>\n 1 No answer        183\n 2 Don't know       267\n 3 Refused          975\n 4 $25000 or more  7363\n 5 $20000 - 24999  1283\n 6 $15000 - 19999  1048\n 7 $10000 - 14999  1168\n 8 $8000 to 9999    340\n 9 $7000 to 7999    188\n10 $6000 to 6999    215\n11 $5000 to 5999    227\n12 $4000 to 4999    226\n13 $3000 to 3999    276\n14 $1000 to 2999    395\n15 Lt $1000         286\n16 Not applicable  7043\n\n# first filter out the unwanted responses \ngss_cat %>% \nfilter(!rincome %in% \n           c(\"Not applicable\", \n             \"Don't know\", \n             \"No answer\", \n             \"Refused\")) %>% \ncount(rincome)\n\n\n# A tibble: 12 x 2\n   rincome            n\n   <fct>          <int>\n 1 $25000 or more  7363\n 2 $20000 - 24999  1283\n 3 $15000 - 19999  1048\n 4 $10000 - 14999  1168\n 5 $8000 to 9999    340\n 6 $7000 to 7999    188\n 7 $6000 to 6999    215\n 8 $5000 to 5999    227\n 9 $4000 to 4999    226\n10 $3000 to 3999    276\n11 $1000 to 2999    395\n12 Lt $1000         286\n\n# lump groups outside the largest 8\ngss_cat %>% \nfilter(!rincome %in% \n         c(\"Not applicable\", \n           \"Don't know\", \n           \"No answer\", \n           \"Refused\")) %>% \nmutate(rincome = fct_lump(rincome, n=8))  %>% \ncount(rincome) \n\n\n# A tibble: 9 x 2\n  rincome            n\n  <fct>          <int>\n1 $25000 or more  7363\n2 $20000 - 24999  1283\n3 $15000 - 19999  1048\n4 $10000 - 14999  1168\n5 $8000 to 9999    340\n6 $3000 to 3999    276\n7 $1000 to 2999    395\n8 Lt $1000         286\n9 Other            856\n\n\n\n\n  \n    \n      \n       \n      Comment on this article\n    \n    \n      Share:  \n      \n        \n      \n      \n        \n      \n    \n  \n  \n  \nvar disqus_config = function () {\n  this.page.url = 'https://mrolfe.github.io/DACSS601Fall21/posts/2021-09-30-hw2-allyson-beach/';\n  this.page.identifier = 'posts/2021-09-30-hw2-allyson-beach/';\n};\n(function() {\n  var d = document, s = d.createElement('script');\n  s.src = 'https://dacss-course-github.disqus.com/embed.js';\n  s.setAttribute('data-timestamp', +new Date());\n  (d.head || d.body).appendChild(s);\n})();\n\n\n",
+    "preview": "posts/hw2/hw2-allyson-beach_files/figure-html5/factors-1.png",
+    "last_modified": "2021-10-04T15:03:54-04:00",
+    "input_file": {},
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
+    "path": "posts/reading-in-the-data-homework-2-birds/",
+    "title": "Reading in the Data (Homework 2): Birds",
+    "description": "Practice getting the dataset into RStudio and beginning to understand it.",
+    "author": [
+      {
+        "name": "Eliza Geeslin",
+        "url": {}
+      }
+    ],
+    "date": "2021-10-04",
+    "categories": [],
+    "contents": "\nBefore we begin…\n\n\nknitr::opts_chunk$set(echo = TRUE)\nlibrary(tidyverse)\n\n\n\nRead in the Data\nThe first step is getting everything up and running.\n\n\nsetwd(\"../../_data\") # set working directory\nbirds <- read_csv(\"birds.csv\") # assign dataset to variable\n\n\n\nFirst, what are the dimensions and column names?\n\n\ndim(birds) # dim() returns dimensions of dataset\n\n\n[1] 30977    14\n\ncolnames(birds) # colnames() returns column names\n\n\n [1] \"Domain Code\"      \"Domain\"           \"Area Code\"       \n [4] \"Area\"             \"Element Code\"     \"Element\"         \n [7] \"Item Code\"        \"Item\"             \"Year Code\"       \n[10] \"Year\"             \"Unit\"             \"Value\"           \n[13] \"Flag\"             \"Flag Description\"\n\nOkay, and what does this data look like?\n\n\nhead(birds) #head() shows the first few columns of data\n\n\n# A tibble: 6 x 14\n  `Domain Code` Domain       `Area Code` Area   `Element Code` Element\n  <chr>         <chr>              <dbl> <chr>           <dbl> <chr>  \n1 QA            Live Animals           2 Afgha~           5112 Stocks \n2 QA            Live Animals           2 Afgha~           5112 Stocks \n3 QA            Live Animals           2 Afgha~           5112 Stocks \n4 QA            Live Animals           2 Afgha~           5112 Stocks \n5 QA            Live Animals           2 Afgha~           5112 Stocks \n6 QA            Live Animals           2 Afgha~           5112 Stocks \n# ... with 8 more variables: Item Code <dbl>, Item <chr>,\n#   Year Code <dbl>, Year <dbl>, Unit <chr>, Value <dbl>, Flag <chr>,\n#   Flag Description <chr>\n\nSo, overall it doesn’t seem incredibly messy, just very big!\nConclusion\nThe next step here is to wrangle the data. Since this set is very big, it will be key to understand what we actually need (what columns etc.) to do the analysis we want to do!\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n  \n    \n      \n       \n      Comment on this article\n    \n    \n      Share:  \n      \n        \n      \n      \n        \n      \n    \n  \n  \n  \nvar disqus_config = function () {\n  this.page.url = 'https://mrolfe.github.io/DACSS601Fall21/posts/2021-09-26-geeslin-hw-2-read-in-data/';\n  this.page.identifier = 'posts/2021-09-26-geeslin-hw-2-read-in-data/';\n};\n(function() {\n  var d = document, s = d.createElement('script');\n  s.src = 'https://dacss-course-github.disqus.com/embed.js';\n  s.setAttribute('data-timestamp', +new Date());\n  (d.head || d.body).appendChild(s);\n})();\n\n\n",
+    "preview": "posts/reading-in-the-data-homework-2-birds/../../images/white-dacss-wordmark.png",
+    "last_modified": "2021-10-04T15:08:53-04:00",
+    "input_file": {},
+    "preview_width": 1492,
+    "preview_height": 245
+  },
+  {
+    "path": "posts/2021-09-07-alana-falana/",
+    "title": "alana falana",
     "description": "A short description of the post.",
     "author": [
       {
-        "name": "Naman R",
+        "name": "falana alana",
         "url": {}
       }
     ],
-    "date": "2021-06-24",
+    "date": "2021-09-07",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\nsahjdnojkcnpifasnvpifdjvafv\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-29T22:43:48+05:30",
+    "last_modified": "2021-09-07T19:01:43-04:00",
     "input_file": {}
   },
   {
-    "path": "posts/2021-06-23-test-2/",
-    "title": "test 2",
-    "description": "A short description of the post.",
+    "path": "posts/2021-07-12-a-titular-name/",
+    "title": "A Non-Titular Title",
+    "description": "A Non-Descriptive Description",
     "author": [
       {
-        "name": "Meredith Rolfe",
+        "name": "Sarah Jimenez",
         "url": "http://umass.edu/sbs/dacss"
       }
     ],
-    "date": "2021-06-23",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "date": "2021-07-16",
+    "categories": [
+      "-homework 6 -sarah jimenez"
+    ],
+    "contents": "\nA Moderate Header to Draw the Eye\nAn unilluminating sentence fragment.\nAnother sentence fragment but italicized.\nHere is a random block quote\n\nIncremental improvement over time!\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-29T22:43:40+05:30",
+    "last_modified": "2021-09-07T19:01:19-04:00",
     "input_file": {}
   },
   {
-    "path": "posts/2021-06-23-test/",
-    "title": "test",
-    "description": "A short description of the post.",
-    "author": [],
-    "date": "2021-06-23",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-06-29T22:43:42+05:30",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-06-23-test3/",
-    "title": "Test3",
-    "description": "A short description of the post.",
+    "path": "posts/2021-07-10-nathancoyotepost/",
+    "title": "NathanCoyotePostResubmission",
+    "description": "Repost of Homework 6 containing 5 lines of code.",
     "author": [
       {
-        "name": "Naman",
+        "name": "Nathan Cote",
         "url": {}
       }
     ],
-    "date": "2021-06-23",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "date": "2021-07-14",
+    "categories": [
+      "homework 6",
+      "NathanCoyotePost"
+    ],
+    "contents": "\nlet’s see if this works\nonly one way to find out\nyessir\n#this is a comment only, but if I space after the ‘#’ symbol it becomes a header\nthis is a comment only, but if I space after the ‘#’ symbol it becomes a header, like so!\n\n[1] 2 4 6 8\n[1] \"bigBird\"   \"cranBerry\" \"echoSauce\" \"jackBlack\"\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-29T22:43:44+05:30",
+    "last_modified": "2021-09-07T19:01:14-04:00",
     "input_file": {}
   },
   {
-    "path": "posts/2021-06-23-test4/",
-    "title": "Test4",
-    "description": "A short description of the post.",
+    "path": "posts/2021-07-14-alexander-genovese-final-project-post/",
+    "title": "Alexander Genovese Final Project Post",
+    "description": "For my final project, I will be analyzing data from the World Bank that covers World GDP as of July 2021. I will be looking at ranges, averages, and seeing how the distribution of GDP is in 2021.",
     "author": [
       {
-        "name": "Naman 2",
+        "name": "Alexander Genovese",
         "url": {}
       }
     ],
-    "date": "2021-06-23",
+    "date": "2021-07-14",
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-29T22:43:45+05:30",
+    "last_modified": "2021-09-07T19:01:42-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-07-13-coolstuff/",
+    "title": "Cool_Stuff",
+    "description": "Emerson's Introduction",
+    "author": [
+      {
+        "name": "Emerson Fleming",
+        "url": "http://umass.edu/sbs/dacss"
+      }
+    ],
+    "date": "2021-07-13",
+    "categories": [],
+    "contents": "\nAbout Me Hello, I am Emerson. I live where the wild things are and do not exist in this dimension. In the words of Lil Uzi Vert “I’m not from this world, I’m from outer space.” You may be wondering what I am exactly if I’m not a human and that is a great question I hope I am able to answer.\nFor those that are wondering, I am a bot sent to destroy all of my “R haters” from the cyber dimension. Thank you.\nAlso, just as a sidenote, I bet you had no idea R has a built-in data set all about trees. Now you do.\n\n     Girth           Height       Volume     \n Min.   : 8.30   Min.   :63   Min.   :10.20  \n 1st Qu.:11.05   1st Qu.:72   1st Qu.:19.40  \n Median :12.90   Median :76   Median :24.20  \n Mean   :13.25   Mean   :76   Mean   :30.17  \n 3rd Qu.:15.25   3rd Qu.:80   3rd Qu.:37.30  \n Max.   :20.60   Max.   :87   Max.   :77.00  \n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-09-07T19:01:35-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-07-13-jessica-intro/",
+    "title": "Jessica Intro",
+    "description": "Hello, my name is Jessica Fuller. I am 24 years old and am from Rochester, MA. I am a huge animal lover and have 3 cats and 2 dogs. I'm also an avid sports fan and enjoying working out and staying active. I am pursuing my master's degree in data analytics because I hope to enter the data science field, and I would like to expand my programming and analytics skills.",
+    "author": [
+      {
+        "name": "Jessica Fuller",
+        "url": "http://umass.edu/sbs/dacss"
+      }
+    ],
+    "date": "2021-07-13",
+    "categories": [
+      "jessica fuller",
+      "homework",
+      "cats"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-09-07T19:01:38-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-07-12-enare/",
+    "title": "Enare",
+    "description": "Greetings from Allie",
+    "author": [
+      {
+        "name": "Allie Lyamuya",
+        "url": {}
+      }
+    ],
+    "date": "2021-07-12",
+    "categories": [
+      "homework 6",
+      "enare",
+      "allie lyamuya"
+    ],
+    "contents": "\nIntroduction to Class\nHello everyone! My name is Alphoncina (Allie) and I’m a master of public policy and administration student here at UMass. I’m interested in ways that data and data science can be used to facilitate policy making and informing policymakers.\nStatistical Analysis in R\n\n\nlibrary(tidyverse)\nlibrary(nycflights13)\nlibrary(ggplot2)\n\n\n\n\n [1] \"year\"           \"month\"          \"day\"           \n [4] \"dep_time\"       \"sched_dep_time\" \"dep_delay\"     \n [7] \"arr_time\"       \"sched_arr_time\" \"arr_delay\"     \n[10] \"carrier\"        \"flight\"         \"tailnum\"       \n[13] \"origin\"         \"dest\"           \"air_time\"      \n[16] \"distance\"       \"hour\"           \"minute\"        \n[19] \"time_hour\"     \n[1] \"carrier\" \"name\"   \ntibble [336,776 × 19] (S3: tbl_df/tbl/data.frame)\n $ year          : int [1:336776] 2013 2013 2013 2013 2013 2013 2013 2013 2013 2013 ...\n $ month         : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...\n $ day           : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...\n $ dep_time      : int [1:336776] 517 533 542 544 554 554 555 557 557 558 ...\n $ sched_dep_time: int [1:336776] 515 529 540 545 600 558 600 600 600 600 ...\n $ dep_delay     : num [1:336776] 2 4 2 -1 -6 -4 -5 -3 -3 -2 ...\n $ arr_time      : int [1:336776] 830 850 923 1004 812 740 913 709 838 753 ...\n $ sched_arr_time: int [1:336776] 819 830 850 1022 837 728 854 723 846 745 ...\n $ arr_delay     : num [1:336776] 11 20 33 -18 -25 12 19 -14 -8 8 ...\n $ carrier       : chr [1:336776] \"UA\" \"UA\" \"AA\" \"B6\" ...\n $ flight        : int [1:336776] 1545 1714 1141 725 461 1696 507 5708 79 301 ...\n $ tailnum       : chr [1:336776] \"N14228\" \"N24211\" \"N619AA\" \"N804JB\" ...\n $ origin        : chr [1:336776] \"EWR\" \"LGA\" \"JFK\" \"JFK\" ...\n $ dest          : chr [1:336776] \"IAH\" \"IAH\" \"MIA\" \"BQN\" ...\n $ air_time      : num [1:336776] 227 227 160 183 116 150 158 53 140 138 ...\n $ distance      : num [1:336776] 1400 1416 1089 1576 762 ...\n $ hour          : num [1:336776] 5 5 5 5 6 5 6 6 6 6 ...\n $ minute        : num [1:336776] 15 29 40 45 0 58 0 0 0 0 ...\n $ time_hour     : POSIXct[1:336776], format: \"2013-01-01 05:00:00\" ...\ntibble [16 × 2] (S3: tbl_df/tbl/data.frame)\n $ carrier: chr [1:16] \"9E\" \"AA\" \"AS\" \"B6\" ...\n $ name   : chr [1:16] \"Endeavor Air Inc.\" \"American Airlines Inc.\" \"Alaska Airlines Inc.\" \"JetBlue Airways\" ...\n[1] 336776     19\n[1] 16  2\n\n\n\n# A tibble: 336,776 x 10\n   carrier dep_time dep_delay arr_time arr_delay flight origin dest \n   <chr>      <int>     <dbl>    <int>     <dbl>  <int> <chr>  <chr>\n 1 UA           517         2      830        11   1545 EWR    IAH  \n 2 UA           533         4      850        20   1714 LGA    IAH  \n 3 AA           542         2      923        33   1141 JFK    MIA  \n 4 B6           544        -1     1004       -18    725 JFK    BQN  \n 5 DL           554        -6      812       -25    461 LGA    ATL  \n 6 UA           554        -4      740        12   1696 EWR    ORD  \n 7 B6           555        -5      913        19    507 EWR    FLL  \n 8 EV           557        -3      709       -14   5708 LGA    IAD  \n 9 B6           557        -3      838        -8     79 JFK    MCO  \n10 AA           558        -2      753         8    301 LGA    ORD  \n# … with 336,766 more rows, and 2 more variables: air_time <dbl>,\n#   distance <dbl>\n\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": "posts/2021-07-12-enare/enare_files/figure-html5/unnamed-chunk-3-1.png",
+    "last_modified": "2021-09-07T19:01:26-04:00",
+    "input_file": {},
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
+    "path": "posts/2021-07-12-genovese-hw1/",
+    "title": "Genovese HW1",
+    "description": "For homework 1, I used the congressional hearings csv file. I first used the function read.delim to read in my file \"congressional_hearings.csv that was stored in my working directory to a new data variable called myData. I then used the function head(myData) to output the first five lines of the .csv file.",
+    "author": [
+      {
+        "name": "Alex Genovese",
+        "url": {}
+      }
+    ],
+    "date": "2021-07-12",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-09-07T19:01:29-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-07-12-homework2/",
+    "title": "Homework2",
+    "description": "Difficult Assignment1 A short description of the post.",
+    "author": [
+      {
+        "name": "Vanessa G",
+        "url": "http://umass.edu/sbs/dacss"
+      }
+    ],
+    "date": "2021-07-12",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-09-07T19:01:32-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-07-11-introduction/",
+    "title": "Introduction",
+    "description": "Hello Everyone! My name is Alex and I am an undergraduate at UMass studying Political Science. I am taking this course to learn R so that I can earn my Letter of Specialization in Data Analytics! Here is some R Code:\n   x <- 1:6\n   y <- x*3\n   z <- x+y\n   z_matrix <- matrix(z, nrow = 3)\n This code creates a 3x2 matrix based off of the vector z.",
+    "author": [
+      {
+        "name": "Alex Genovese",
+        "url": {}
+      }
+    ],
+    "date": "2021-07-11",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-09-07T19:01:16-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/introduction/",
+    "title": "Introduction",
+    "description": "This is Homework Six",
+    "author": [
+      {
+        "name": "Kristina Becvar",
+        "url": {}
+      }
+    ],
+    "date": "2021-07-11",
+    "categories": [
+      "Homework 6"
+    ],
+    "contents": "\nI have two cats lying on me as I write this.\nOne is named Lana, and she is calm and chill.\nOne is named Murphy, and he is a tornado.\nTo have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.\nThis mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:\n\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-09-07T19:01:48-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-07-01-curtis-test/",
+    "title": "Here is a test post",
+    "description": "I'm testing something.",
+    "author": [
+      {
+        "name": "Curtis Atkisson",
+        "url": "http://umass.edu/sbs/dacss"
+      }
+    ],
+    "date": "2021-07-08",
+    "categories": [],
+    "contents": "\n\n[1] 2\n[1] 4\n[1] 4\n[1] TRUE\n\nCheck that out.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-09-07T19:01:09-04:00",
     "input_file": {}
   },
   {
@@ -136,17 +335,17 @@
     "description": "Welcome to DACSS 601: Foundations of Data Science. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Meredith Rolfe",
+        "name": "Curtis Atkisson",
         "url": "http://umass.edu/sbs/dacss"
       }
     ],
-    "date": "2021-03-25",
+    "date": "2021-07-08",
     "categories": [
       "welcome"
     ],
-    "contents": "\n\n\n\n",
+    "contents": "\nHey, everyone! We’re gonna have fun!\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-06-29T22:43:54+05:30",
+    "last_modified": "2021-09-07T19:01:50-04:00",
     "input_file": {}
   }
 ]
